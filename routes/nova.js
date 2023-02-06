@@ -3,7 +3,8 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-   res.send('Hello Nova!');
+   res.render('nova', { name: 'Nova'})
+   // res.send('Hello Nova! Nodemon?');
 });
 
 module.exports = router;
