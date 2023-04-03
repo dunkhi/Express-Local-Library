@@ -6,6 +6,7 @@ const book_controller = require("../controllers/bookController");
 const author_controller = require("../controllers/authorController");
 const genre_controller = require("../controllers/genreController");
 const book_instance_controller = require("../controllers/bookinstanceController");
+const genre = require("../models/genre");
 
 /// BOOK ROUTES ///
 
@@ -87,6 +88,8 @@ router.get("/genre/:id", genre_controller.genre_detail);
 
 // GET request for list of all Genre.
 router.get("/genres", genre_controller.genre_list);
+
+router.get("/genres/test", genre_controller.genre_test);
 
 /// BOOKINSTANCE ROUTES ///
 

@@ -1,0 +1,15 @@
+extends layout 
+
+block content 
+   h1= title 
+   p These are the books for the #{genre.name} genre 
+   div(style='margin-left:20px;margin-top:20px')
+   
+   ul
+      d1 
+         each book in genre_books 
+            dt 
+               a(href=book.url) #{book.title}
+            dd #{book.summary}
+         else 
+            p This genre has no books
