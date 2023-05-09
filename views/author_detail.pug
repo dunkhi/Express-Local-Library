@@ -3,7 +3,6 @@ extends layout
 block content 
    h1 Author: #{author.name} 
    p #{author.pretty_dob}
-
    div(style='margin-left:20px;margin-top:20px')
 
       h4 Books 
@@ -14,3 +13,8 @@ block content
             dd #{book.summary}
          else 
             p This author needs to write more.
+   hr
+   p 
+      a.link-danger(href=author.url + '/delete') Delete Author
+   p
+      a.link-warning.text-warning(href=author.url + '/update') Update Author
