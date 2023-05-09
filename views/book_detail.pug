@@ -12,9 +12,10 @@ block content
          a(href=val.url) #{val.name}
          if index < book.genre.length - 1
             |,
+   
+
    div(style='margin-left:20px;margin-top:20px')
       h4 Copies
-
       each val in book_instances 
          hr
          if val.status == 'Available'
@@ -30,3 +31,8 @@ block content
             a(href=val.url) #{val.id}
       else 
          p There are no copies in the library.
+
+   p
+      a.link-danger.text-danger(href=book.url + '/delete') Delete Book
+   p
+      a.link-primary.text-primary(href=book.url + '/update') Update Book

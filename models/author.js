@@ -24,6 +24,14 @@ AuthorSchema.virtual("url").get(function () {
    return `/catalog/author/${this._id}`;
 });
 
+AuthorSchema.virtual("p_dob").get(function() {
+   return DateTime.fromJSDate(this.date_of_birth).toISODate();
+})
+
+AuthorSchema.virtual("p_dod").get(function() {
+   return DateTime.fromJSDate(this.date_of_death).toISODate();
+})
+
 AuthorSchema.virtual("pretty_dob").get(function() {
    let dob = this.date_of_birth == null ? "Not Born!" : DateTime.fromJSDate(this.date_of_birth).toLocaleString(DateTime.DATE_SHORT);
    let dod = this.date_of_death == null ? "Not Dead?!" :DateTime.fromJSDate(this.date_of_death).toLocaleString(DateTime.DATE_SHORT);

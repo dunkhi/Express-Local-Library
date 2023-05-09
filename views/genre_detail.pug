@@ -13,3 +13,8 @@ block content
             dd #{book.summary}
          else 
             p This genre has no books
+
+   p
+      a.link-danger.text-danger(href=genre.url + '/delete') Delete Genre
+   p
+      a.link-primary.text-primary(href=genre.url + '/update') Update Genre
